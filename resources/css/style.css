@@ -1,9 +1,356 @@
+/*Created by Starhole*/
+/*Updated 171015*/
+/*Mobile-first design*/
+
 body {
   font-family: Helvetica;
   font-size: 18px;
   line-height: 1.4;
 }
 
-header {
+a {
+  color: white;
+  text-decoration: none;
+}
 
+/*Header information inc/ company logo & title, navigation, banner, and headline*/
+
+header {
+  background: url("../images/glasses-bg.png") no-repeat 20%;
+  background-size: cover;
+  height: 17rem;
+}
+
+.banner_container {
+  background-color: cadetblue;
+  color: white;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+}
+
+.logo {
+  align-items: center;
+  display: inline-flex;
+}
+
+.logo img {
+  height: 1.5rem;
+  margin: 0 1rem 0 2rem;
+  width: auto;
+}
+
+.logo h1 {
+  display: none;
+}
+
+.nav_mobile {
+  display: inline-flex;
+  margin-right: 2rem;
+}
+
+.nav_desk-tab {
+  display: none;
+  margin-right: 2rem;
+}
+
+.headline {
+  display: flex;
+  margin-top: 12.5rem;
+  position: absolute;
+  width: 100%;
+}
+
+.headline_container {
+  display: flex;
+  width: 100%;
+  z-index: 5;
+}
+
+.headline_container span {
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: center;
+  padding: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/*Description of services*/
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin: 3.77rem 0;
+
+}
+
+.gallery_container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+}
+
+.gallery_container figure {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.54rem;
+}
+
+.gallery_container figure img {
+  height: 100%; /*Force original proportions*/
+  width: 100%; /*Force original proportions*/
+}
+
+.gallery_container figcaption {
+  font-size: .77rem;
+  margin-top: 1.54rem;
+  text-align: center;
+}
+
+/*Mission statement and scheduling for appointments*/
+
+.info {
+  margin-bottom: 5rem;
+}
+
+.philosophy {
+  display: flex;
+  flex-direction: column;
+}
+
+.philosophy h2 {
+  background-color: cadetblue;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .5rem 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.philosophy p {
+  font-size: .77rem;
+  margin: 1rem 0 4rem .25rem;
+}
+
+.appointments {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointments h2 {
+  background-color: cadetblue;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .5rem 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.appointments p {
+  font-size: .77rem;
+  margin: 1rem 0 0 .25rem; /*Added left margin for aesthetics; not indicated in redline*/
+}
+
+/*Copyright*/
+
+footer {
+  background-color: azure;
+}
+
+.copyright {
+  display: inline-flex;
+  justify-content: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.copyright img {
+  height: 1.5rem;
+  width: auto;
+}
+
+.copyright span {
+  display: none;
+}
+
+@media only screen and (min-width: 630px) {
+
+  header {
+    background-position: 30%; /*Based on redline, but no explicit instruction*/
+    height: 22rem;
+  }
+
+  .headline {
+    justify-content: flex-end; /*Align headline to right*/
+    margin-top: 8.5rem;
+  }
+
+  .headline_container {
+    width: auto; /*Reset 100% headline width to auto*/
+  }
+
+  .headline_container span {
+    font-size: 1.33rem;
+    margin-right: 2rem;
+    padding: .75rem 4rem;
+  }
+
+  .nav_mobile {
+    display: none; /*Hide "Menu" navigation*/
+  }
+
+  .nav_desk-tab {
+    display: flex; /*Display "Services", "Product", and "Contact" navigation*/
+  }
+  .nav_desk-tab a {
+    margin-left: 2rem;
+  }
+
+  .gallery {
+    margin: 3rem auto; /*Set distance between "gallery" section and the header/footer sections above/below;
+                        Also used to center entire section*/
+  }
+
+  .gallery_container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 37rem; /*Sum of width of each figure (3x5rem) and the margins in between (2x6rem)*/
+  }
+
+  .gallery_container figure {
+    height: 8rem;
+    justify-content: space-between; /*In addition to L251, force contents to fill 8rem height*/
+    margin: 0; /*Given that the figures are no longer stacked, margin is reset to 0*/
+    width: 5rem;
+  }
+
+  .gallery_container figure img {
+    height: auto;
+    width: 5rem;
+  }
+
+  .gallery_container .gallery_paper img {
+    height: auto;
+    width: 3.5rem; /*Force smaller width as indicated on the redline*/
+  }
+
+  .gallery_container figcaption {
+    font-size: 1rem;
+    margin: 0; /*See L234*/
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .info_container {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 75%; /*Guess based on redline proportions; not explicitly stated*/
+  }
+
+  .philosophy {
+    width: 46.6%; /*35% of 75% width as defined in L264*/
+  }
+
+  .philosophy h2 {
+    width: 10rem;
+  }
+
+  .philosophy p {
+    font-size: 1rem;
+    margin: 1rem 0 0 0; /*Removed bottom and left margins*/
+  }
+
+  .appointments {
+    width: 46.6%; /*35% of 75% width as defined in L264*/
+  }
+
+  .appointments h2 {
+    width: 10rem;
+  }
+
+  .appointments p {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
+  .copyright {
+    justify-content: flex-start; /*Align to the left*/
+    width: 100%;
+  }
+
+  .copyright img {
+    margin: 0 1rem 0 4rem;
+  }
+
+  .copyright span {
+    display: flex; /*Display hidden verbiage*/
+  }
+}
+
+@media only screen and (min-width: 1236px) {
+
+  header {
+    background-position: 80%; /*Based on redline, but no explicit instruction*/
+    height: 30rem;
+  }
+  .banner {
+    margin: 0 auto; /*Center on page*/
+    width: 960px; /*Force 960px site container*/
+  }
+
+  .banner_container {
+    margin-top: 1rem;
+    position: relative; /*Remove fixed position*/
+  }
+
+  .headline {
+    justify-content: center; /*Center container page*/
+  }
+
+  .headline_container {
+    justify-content: flex-end; /*Align content to right*/
+    width: 960px; /*Force 960px site container*/
+  }
+
+  .headline_container span {
+    font-size: 2rem;
+    line-height: 1.2rem;
+    margin-right: -2rem; /*Set negative margin as described on redline*/
+    padding: 1.5rem 5rem;
+    width: auto; /*Constrain white background to padding indicated in L335*/
+  }
+
+  .info {
+    justify-content: center;
+  }
+
+  .info_container {
+    max-width: 960px; /*Force 960px site container*/
+  }
+
+  footer {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 2rem 0 2rem; /*Based on redline, but no explicit instruction*/
+  }
+
+  .copyright img {
+    margin-left: 2rem; /*This margin in addition to L344 is the indicated 4rem*/
+  }
 }
